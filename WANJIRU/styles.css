@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #000000;
+    background-image: url("image5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255 255 255 / 50%);
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+}
+
+.control{
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background: rgb(255 255 255 / 6%);
+    color: #f9f9f9;
+    margin: 8px 0;
+    transition: 0.4s;
+}
+
+#bars{
+    margin: 8px 0;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgb(255 255 255 / 6%);
+}
+
+#bars div{
+    height: 6px;
+    border-radius: 3px;
+    transition: 00.4s;
+    width: 0%;
+}
+
+#bars.weak div{
+    background:#d0424f ;
+    width: 25%;
+}
+
+#bars.medium div{
+    background: orange;
+    width: 50%;
+}
+
+#bars.strong div{
+    background: yellowgreen;
+    width: 75%;
+}
+
+#bars.very-strong div{
+background: green;
+width: 100%;
+}
+
+.form input.control::placeholder{
+    color: rgb(255 255 255 / 25%);
+}
+
+.form input:focus{
+border-color: dodgerblue;
+box-shadow: 0 0 5px rgba(16, 75, 134, 0.5);
+outline: none;
+}
+
+.form > button.control{
+    cursor: pointer;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background:#3a75dc ;
+    color: #fff;
+    border: 0;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.73s;
+}
+
+.card{
+    width: 320px;
+    padding: 60px 30px 32px;
+    border-radius: 20px;
+    background: rgb(0 0 0 / 21%);
+    backdrop-filter: blur(26px);
+    text-align: center;
+}
+
+.card > h2{
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0  0 6px;
+    color: #f9f9f9;
+}
+
+.card >h3{
+    color: rgb(255 255 255 / 50%);
+    margin:  0 0 40px;
+    font-weight: 500;
+    font-size: 16px;
+}

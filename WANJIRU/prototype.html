@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking Prototype</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+        }
+        .availability {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+        }
+        .availability div {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+        }
+        .available {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .booked {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Your Appointment</h1>
+    </header>
+    <div class="container">
+        <form id="appointmentForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+                <p class="error-message" id="nameError" style="display: none;">Please enter your name.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Choose Date</label>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Choose Appointment Slot</label>
+                <div class="availability">
+                    <div class="available">9:00 AM</div>
+                    <div class="available">10:00 AM</div>
+                    <div class="booked">11:00 AM</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Confirm Appointment</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Example validation for name
+            const nameField = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+
+            if (nameField.value.trim() === "") {
+                nameError.style.display = 'block';
+            } else {
+                nameError.style.display = 'none';
+                alert('Appointment Confirmed!');
+            }
+        });
+    </script>
+</body>
+</html>
